@@ -1,0 +1,20 @@
+on: workflow_dispatch
+name: Deploy release
+jobs:
+  check:
+    name: Lint, check & build code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: echo "Test here!"
+      - name: Build
+        run: echo "Build here!"
+  deploy:
+    name: Deploy to prod
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://example.com
+    steps:
+      - name: Deploy
+        run: echo "Deploy ran successfully!"
