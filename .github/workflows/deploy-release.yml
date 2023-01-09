@@ -10,6 +10,7 @@ jobs:
       - name: Build
         run: echo "Build here!"
   deploy:
+    needs: check
     name: Deploy to prod
     runs-on: ubuntu-latest
     environment:
